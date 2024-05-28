@@ -4,10 +4,7 @@ import com.kloader.discovery.IDiscoveryStrategy
 import com.kloader.discovery.data.DiscoveryResult
 import com.kloader.discovery.filter.DiscoveryFilter
 import com.kloader.discovery.filter.type.JarDiscoveryFilter
-import jdk.tools.jlink.plugin.PluginException
 import java.io.File
-import java.io.FileInputStream
-import java.io.InputStream
 import java.util.zip.ZipFile
 
 
@@ -33,7 +30,7 @@ class ModDirectoryDiscoveryStrategy(
                 }
 
                 if(hasJson) {
-                    mods.add(DiscoveryResult(it.nameWithoutExtension, FileInputStream(it)))
+                    mods.add(DiscoveryResult(it.nameWithoutExtension, it))
                 }
             }
         }

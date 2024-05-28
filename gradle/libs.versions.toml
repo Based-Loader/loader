@@ -1,0 +1,14 @@
+[versions]
+mixin = "0.13.4+mixin.0.8.5"
+log4j = "2.20.0"
+gson = "2.11.0"
+
+[libraries]
+sponge-mixin = { module = "net.fabricmc:sponge-mixin", version.ref = "mixin" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
+log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "log4j" }
+
+[bundles]
+log4j = ["log4j-api", "log4j-core", "log4j-slf4j-impl"]

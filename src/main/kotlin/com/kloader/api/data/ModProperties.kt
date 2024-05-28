@@ -7,6 +7,8 @@ data class ModProperties(
     val version: String = "unknown",
     val author: String = "unknown",
     val contact: Contact = Contact(),
+    val main: String,
+    val mixins: List<String> = emptyList(),
     val dependencies: List<Dependency> = emptyList(),
 )
 
