@@ -11,7 +11,4 @@ abstract class Mod {
 
     open fun onEnable() {}
     open fun onDisable() {}
-
-    abstract fun start()
-    abstract fun stop()
 }
