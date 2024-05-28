@@ -21,6 +21,9 @@ class ModDirectoryDiscoveryStrategy(
             if(filter.canDiscover(it)) {
                 // Make sure it has a json file
                 var hasJson = false
+                if(!(it.length() > 0 && it.extension == "zip")) {
+                    return@forEach
+                }
                 val file = ZipFile(it)
 
                 file.entries().asSequence().forEach { entry ->
