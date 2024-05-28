@@ -38,7 +38,8 @@ object Main {
         val properties = LoaderProperties(
             plugins.toTypedArray(),
             strategies.toTypedArray(),
-            VMOptions.disableDefaultStrategies
+            VMOptions.disableDefaultStrategies,
+            VMOptions.mainClass
         )
 
         // Launch!

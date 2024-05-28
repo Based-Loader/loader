@@ -78,5 +78,16 @@ object KLoader {
 
         // Enable all mods
         loadedMods.forEach { it.onEnable() }
+
+        logger.fatal("Launching game!")
+
+        // Launch the game!
+        try {
+            Class.forName(properties.mainClass)
+                .getDeclaredMethod("main")
+                .invoke(null, properties.programArguments)
+        } catch (e: Exception) {
+            logger.fatal("Failed to load game: ${e.cause}", e)
+        }
     }
 }

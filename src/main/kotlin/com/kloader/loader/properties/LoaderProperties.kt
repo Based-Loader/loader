@@ -9,7 +9,9 @@ import com.kloader.discovery.IDiscoveryStrategy
 internal data class LoaderProperties(
     val plugins: Array<LoaderPlugin>,
     val additionalStrategies: Array<IDiscoveryStrategy>,
+    val programArguments: Array<String>,
     val disableDefaultStrategy: Boolean,
+    val mainClass: String,
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
