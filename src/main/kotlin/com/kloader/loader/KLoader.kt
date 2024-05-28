@@ -1,6 +1,7 @@
 package com.kloader.loader
 
 import com.kloader.discovery.IDiscoveryStrategy
+import com.kloader.discovery.data.DiscoveryResult
 import com.kloader.discovery.type.ModDirectoryDiscoveryStrategy
 import com.kloader.loader.properties.LoaderProperties
 import java.io.File
@@ -24,5 +25,12 @@ object KLoader {
         discoveryStrategies.addAll(properties.additionalStrategies)
 
         properties.plugins.forEach { it.apply(this) } // Apply plugins
+
+        val discovered = mutableListOf<DiscoveryResult>()
+
+        // Discover mods
+        discoveryStrategies.forEach { it.discover().forEach(discovered::add) }
+
+        println("Discovered ${discovered.size} mods!")
     }
 }
