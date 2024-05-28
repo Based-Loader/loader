@@ -9,5 +9,9 @@ abstract class Mod {
     // Access to the mod's properties.
     lateinit var properties: ModProperties
 
+    open fun onEnable() {}
+    open fun onDisable() {}
+
     abstract fun start()
+    abstract fun stop()
 }

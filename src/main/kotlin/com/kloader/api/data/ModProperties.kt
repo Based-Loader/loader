@@ -6,10 +6,16 @@ data class ModProperties(
     val displayName: String = id,
     val version: String = "unknown",
     val author: String = "unknown",
-    val contact: Contact = Contact()
+    val contact: Contact = Contact(),
+    val dependencies: List<Dependency> = emptyList(),
 )
 
 data class Contact(
     val website: String = "unknown",
     val sources: String = "unknown"
+)
+
+data class Dependency(
+    val id: String,
+    val version: String
 )
